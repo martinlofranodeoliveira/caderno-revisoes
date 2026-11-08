@@ -1,0 +1,402 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-11-08T09:02:53.797295+00:00",
+  "title": "Design System: Caderno de Revisões",
+  "extensions": {
+    "colorMeta": {
+      "ink": {
+        "role": "neutral",
+        "displayName": "Tinta azulada",
+        "canonical": "#19212e",
+        "tonalRamp": [
+          "oklch(15.00% 0.02752 259.96)",
+          "oklch(26.43% 0.02752 259.96)",
+          "oklch(37.86% 0.02752 259.96)",
+          "oklch(49.29% 0.02752 259.96)",
+          "oklch(60.71% 0.02752 259.96)",
+          "oklch(72.14% 0.02752 259.96)",
+          "oklch(83.57% 0.02752 259.96)",
+          "oklch(95.00% 0.02752 259.96)"
+        ]
+      },
+      "muted": {
+        "role": "neutral",
+        "displayName": "Cinza de apoio",
+        "canonical": "#5b6472",
+        "tonalRamp": [
+          "oklch(15.00% 0.02498 259.18)",
+          "oklch(26.43% 0.02498 259.18)",
+          "oklch(37.86% 0.02498 259.18)",
+          "oklch(49.29% 0.02498 259.18)",
+          "oklch(60.71% 0.02498 259.18)",
+          "oklch(72.14% 0.02498 259.18)",
+          "oklch(83.57% 0.02498 259.18)",
+          "oklch(95.00% 0.02498 259.18)"
+        ]
+      },
+      "accent": {
+        "role": "primary",
+        "displayName": "Rosa LOFRANO",
+        "canonical": "#ae185c",
+        "tonalRamp": [
+          "oklch(15.00% 0.18660 0.76)",
+          "oklch(26.43% 0.18660 0.76)",
+          "oklch(37.86% 0.18660 0.76)",
+          "oklch(49.29% 0.18660 0.76)",
+          "oklch(60.71% 0.18660 0.76)",
+          "oklch(72.14% 0.18660 0.76)",
+          "oklch(83.57% 0.18660 0.76)",
+          "oklch(95.00% 0.18660 0.76)"
+        ]
+      },
+      "accent-hover": {
+        "role": "primary",
+        "displayName": "Rosa profundo",
+        "canonical": "#8c134a",
+        "tonalRamp": [
+          "oklch(15.00% 0.15812 0.29)",
+          "oklch(26.43% 0.15812 0.29)",
+          "oklch(37.86% 0.15812 0.29)",
+          "oklch(49.29% 0.15812 0.29)",
+          "oklch(60.71% 0.15812 0.29)",
+          "oklch(72.14% 0.15812 0.29)",
+          "oklch(83.57% 0.15812 0.29)",
+          "oklch(95.00% 0.15812 0.29)"
+        ]
+      },
+      "canvas": {
+        "role": "neutral",
+        "displayName": "Plano frio",
+        "canonical": "#f0f2f6",
+        "tonalRamp": [
+          "oklch(15.00% 0.00576 264.53)",
+          "oklch(26.43% 0.00576 264.53)",
+          "oklch(37.86% 0.00576 264.53)",
+          "oklch(49.29% 0.00576 264.53)",
+          "oklch(60.71% 0.00576 264.53)",
+          "oklch(72.14% 0.00576 264.53)",
+          "oklch(83.57% 0.00576 264.53)",
+          "oklch(95.00% 0.00576 264.53)"
+        ]
+      },
+      "paper": {
+        "role": "neutral",
+        "displayName": "Papel branco",
+        "canonical": "#fff",
+        "tonalRamp": [
+          "oklch(15.00% 0.00000 89.88)",
+          "oklch(26.43% 0.00000 89.88)",
+          "oklch(37.86% 0.00000 89.88)",
+          "oklch(49.29% 0.00000 89.88)",
+          "oklch(60.71% 0.00000 89.88)",
+          "oklch(72.14% 0.00000 89.88)",
+          "oklch(83.57% 0.00000 89.88)",
+          "oklch(95.00% 0.00000 89.88)"
+        ]
+      },
+      "line": {
+        "role": "neutral",
+        "displayName": "Linha fria",
+        "canonical": "#d8dde5",
+        "tonalRamp": [
+          "oklch(15.00% 0.01220 259.82)",
+          "oklch(26.43% 0.01220 259.82)",
+          "oklch(37.86% 0.01220 259.82)",
+          "oklch(49.29% 0.01220 259.82)",
+          "oklch(60.71% 0.01220 259.82)",
+          "oklch(72.14% 0.01220 259.82)",
+          "oklch(83.57% 0.01220 259.82)",
+          "oklch(95.00% 0.01220 259.82)"
+        ]
+      },
+      "control-line": {
+        "role": "neutral",
+        "displayName": "Linha de campo",
+        "canonical": "#c1cad6",
+        "tonalRamp": [
+          "oklch(15.00% 0.01946 255.55)",
+          "oklch(26.43% 0.01946 255.55)",
+          "oklch(37.86% 0.01946 255.55)",
+          "oklch(49.29% 0.01946 255.55)",
+          "oklch(60.71% 0.01946 255.55)",
+          "oklch(72.14% 0.01946 255.55)",
+          "oklch(83.57% 0.01946 255.55)",
+          "oklch(95.00% 0.01946 255.55)"
+        ]
+      },
+      "secondary-line": {
+        "role": "neutral",
+        "displayName": "Linha secundária",
+        "canonical": "#cbd2dc",
+        "tonalRamp": [
+          "oklch(15.00% 0.01581 257.20)",
+          "oklch(26.43% 0.01581 257.20)",
+          "oklch(37.86% 0.01581 257.20)",
+          "oklch(49.29% 0.01581 257.20)",
+          "oklch(60.71% 0.01581 257.20)",
+          "oklch(72.14% 0.01581 257.20)",
+          "oklch(83.57% 0.01581 257.20)",
+          "oklch(95.00% 0.01581 257.20)"
+        ]
+      },
+      "section-line": {
+        "role": "neutral",
+        "displayName": "Linha de seção",
+        "canonical": "#bcc5d1",
+        "tonalRamp": [
+          "oklch(15.00% 0.01955 255.55)",
+          "oklch(26.43% 0.01955 255.55)",
+          "oklch(37.86% 0.01955 255.55)",
+          "oklch(49.29% 0.01955 255.55)",
+          "oklch(60.71% 0.01955 255.55)",
+          "oklch(72.14% 0.01955 255.55)",
+          "oklch(83.57% 0.01955 255.55)",
+          "oklch(95.00% 0.01955 255.55)"
+        ]
+      },
+      "frame": {
+        "role": "neutral",
+        "displayName": "Azul da moldura",
+        "canonical": "#17202d",
+        "tonalRamp": [
+          "oklch(15.00% 0.02827 257.53)",
+          "oklch(26.43% 0.02827 257.53)",
+          "oklch(37.86% 0.02827 257.53)",
+          "oklch(49.29% 0.02827 257.53)",
+          "oklch(60.71% 0.02827 257.53)",
+          "oklch(72.14% 0.02827 257.53)",
+          "oklch(83.57% 0.02827 257.53)",
+          "oklch(95.00% 0.02827 257.53)"
+        ]
+      },
+      "focus": {
+        "role": "primary",
+        "displayName": "Rosa de foco",
+        "canonical": "#b23975",
+        "tonalRamp": [
+          "oklch(15.00% 0.16646 353.64)",
+          "oklch(26.43% 0.16646 353.64)",
+          "oklch(37.86% 0.16646 353.64)",
+          "oklch(49.29% 0.16646 353.64)",
+          "oklch(60.71% 0.16646 353.64)",
+          "oklch(72.14% 0.16646 353.64)",
+          "oklch(83.57% 0.16646 353.64)",
+          "oklch(95.00% 0.16646 353.64)"
+        ]
+      },
+      "danger": {
+        "role": "error",
+        "displayName": "Vermelho de correção",
+        "canonical": "#a51d36",
+        "tonalRamp": [
+          "oklch(15.00% 0.16945 17.57)",
+          "oklch(26.43% 0.16945 17.57)",
+          "oklch(37.86% 0.16945 17.57)",
+          "oklch(49.29% 0.16945 17.57)",
+          "oklch(60.71% 0.16945 17.57)",
+          "oklch(72.14% 0.16945 17.57)",
+          "oklch(83.57% 0.16945 17.57)",
+          "oklch(95.00% 0.16945 17.57)"
+        ]
+      },
+      "secondary-hover": {
+        "role": "primary",
+        "displayName": "Fundo rosa de apoio",
+        "canonical": "#f7edf2",
+        "tonalRamp": [
+          "oklch(15.00% 0.01259 345.49)",
+          "oklch(26.43% 0.01259 345.49)",
+          "oklch(37.86% 0.01259 345.49)",
+          "oklch(49.29% 0.01259 345.49)",
+          "oklch(60.71% 0.01259 345.49)",
+          "oklch(72.14% 0.01259 345.49)",
+          "oklch(83.57% 0.01259 345.49)",
+          "oklch(95.00% 0.01259 345.49)"
+        ]
+      },
+      "secondary-hover-line": {
+        "role": "primary",
+        "displayName": "Borda rosa de apoio",
+        "canonical": "#bc8ba3",
+        "tonalRamp": [
+          "oklch(15.00% 0.06747 348.10)",
+          "oklch(26.43% 0.06747 348.10)",
+          "oklch(37.86% 0.06747 348.10)",
+          "oklch(49.29% 0.06747 348.10)",
+          "oklch(60.71% 0.06747 348.10)",
+          "oklch(72.14% 0.06747 348.10)",
+          "oklch(83.57% 0.06747 348.10)",
+          "oklch(95.00% 0.06747 348.10)"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "headline": {
+        "displayName": "headline",
+        "purpose": "Título da área ativa."
+      },
+      "title": {
+        "displayName": "title",
+        "purpose": "Títulos de painéis e grupos."
+      },
+      "section": {
+        "displayName": "section",
+        "purpose": "Subseções e títulos menores."
+      },
+      "body": {
+        "displayName": "body",
+        "purpose": "Base de leitura e conteúdo."
+      },
+      "label": {
+        "displayName": "label",
+        "purpose": "Rótulos visíveis dos campos."
+      },
+      "field": {
+        "displayName": "field",
+        "purpose": "Valores de campos e seletores."
+      },
+      "action": {
+        "displayName": "action",
+        "purpose": "Texto de botões."
+      },
+      "metadata": {
+        "displayName": "metadata",
+        "purpose": "Contagens e estado de sessão."
+      }
+    },
+    "shadows": [],
+    "motion": [
+      {
+        "name": "state-transition",
+        "value": "background-color .16s ease-out, color .16s ease-out, border-color .16s ease-out",
+        "purpose": "Resposta de botões e links; removida quando há preferência por movimento reduzido."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "compact-desktop",
+        "value": "1050px"
+      },
+      {
+        "name": "stable-scroll-desktop",
+        "value": "760px"
+      },
+      {
+        "name": "mobile",
+        "value": "700px"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Ação principal",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Controle de ação com rótulo explícito e foco de teclado.",
+      "html": "<button class=\"ds-button-primary\">Mostrar resposta</button>",
+      "css": ".ds-button-primary{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:42px;border:1px solid transparent;border-radius:7px;padding:10px 14px;font-size:12px;font-weight:700;line-height:1.3;cursor:pointer;font-family:Lato,Arial,sans-serif;transition:background-color .16s ease-out,color .16s ease-out,border-color .16s ease-out;background:var(--accent,#ae185c);color:var(--paper,#fff);}.ds-button-primary:hover{background:var(--accent-hover,#8c134a);}.ds-button-primary:focus-visible{outline:3px solid var(--focus,#b23975);outline-offset:3px;}.ds-button-primary:disabled{opacity:.55;cursor:not-allowed;}@media(prefers-reduced-motion:reduce){.ds-button-primary{transition:none;}}"
+    },
+    {
+      "name": "Ação secundária",
+      "kind": "button",
+      "refersTo": "button-secondary",
+      "description": "Controle de ação com rótulo explícito e foco de teclado.",
+      "html": "<button class=\"ds-button-secondary\">Manter meus dados</button>",
+      "css": ".ds-button-secondary{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:42px;border:1px solid transparent;border-radius:7px;padding:10px 14px;font-size:12px;font-weight:700;line-height:1.3;cursor:pointer;font-family:Lato,Arial,sans-serif;transition:background-color .16s ease-out,color .16s ease-out,border-color .16s ease-out;background:var(--paper,#fff);color:var(--ink,#19212e);border-color:#cbd2dc;}.ds-button-secondary:hover{background:#f7edf2;border-color:#bc8ba3;}.ds-button-secondary:focus-visible{outline:3px solid var(--focus,#b23975);outline-offset:3px;}.ds-button-secondary:disabled{opacity:.55;cursor:not-allowed;}@media(prefers-reduced-motion:reduce){.ds-button-secondary{transition:none;}}"
+    },
+    {
+      "name": "Confirmação destrutiva",
+      "kind": "button",
+      "refersTo": "button-danger",
+      "description": "Controle de ação com rótulo explícito e foco de teclado.",
+      "html": "<button class=\"ds-button-danger\">Confirmar remoção</button>",
+      "css": ".ds-button-danger{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:42px;border:1px solid transparent;border-radius:7px;padding:10px 14px;font-size:12px;font-weight:700;line-height:1.3;cursor:pointer;font-family:Lato,Arial,sans-serif;transition:background-color .16s ease-out,color .16s ease-out,border-color .16s ease-out;background:var(--danger,#a51d36);color:var(--paper,#fff);}.ds-button-danger:hover{background:#81152a;}.ds-button-danger:focus-visible{outline:3px solid var(--focus,#b23975);outline-offset:3px;}.ds-button-danger:disabled{opacity:.55;cursor:not-allowed;}@media(prefers-reduced-motion:reduce){.ds-button-danger{transition:none;}}"
+    },
+    {
+      "name": "Ação textual",
+      "kind": "button",
+      "refersTo": "button-text",
+      "description": "Gestão de registros dentro das listas.",
+      "html": "<button class=\"ds-text-button\">Editar conteúdo</button>",
+      "css": ".ds-text-button{border:0;background:none;padding:6px 0;color:var(--accent,#ae185c);text-decoration:underline;text-underline-offset:3px;font-size:12px;cursor:pointer;font-family:Lato,Arial,sans-serif;transition:background-color .16s ease-out,color .16s ease-out,border-color .16s ease-out;}.ds-text-button:hover{color:var(--accent-hover,#8c134a)}.ds-text-button:focus-visible{outline:3px solid var(--focus,#b23975);outline-offset:3px;}@media(prefers-reduced-motion:reduce){.ds-text-button{transition:none}}"
+    },
+    {
+      "name": "Campo rotulado",
+      "kind": "input",
+      "refersTo": "field",
+      "description": "Entrada branca com rótulo visível e borda definida.",
+      "html": "<label class=\"ds-field\" for=\"ds-deck-name\">Nome do baralho<input id=\"ds-deck-name\" class=\"ds-input\" placeholder=\"Ex.: Cálculo mental\"></label>",
+      "css": ".ds-field{display:flex;flex-direction:column;gap:6px;font-family:Lato,Arial,sans-serif;font-size:12px;font-weight:700;color:var(--ink,#19212e)}.ds-input{background:var(--paper,#fff);border:1px solid #c1cad6;border-radius:6px;min-height:42px;padding:10px 11px;font-family:inherit;font-size:14px;font-weight:400;color:var(--ink,#19212e);caret-color:var(--accent,#ae185c)}.ds-input::placeholder{color:var(--muted,#5b6472);opacity:1}.ds-input:focus{border-color:var(--accent,#ae185c)}.ds-input:focus-visible{outline:3px solid var(--focus,#b23975);outline-offset:3px;}.ds-input[aria-invalid=true]{border-color:var(--danger,#a51d36);background:#fff7f9}.ds-input:disabled{opacity:.55;cursor:not-allowed}@media(max-width:700px){.ds-field{font-size:11px}.ds-input{font-size:16px}}"
+    },
+    {
+      "name": "Navegação de trabalho",
+      "kind": "nav",
+      "refersTo": "navigation",
+      "description": "Acesso atual indicado por texto e linha rosa.",
+      "html": "<nav class=\"ds-nav\" aria-label=\"Áreas do caderno\"><button class=\"ds-nav-button\" aria-current=\"page\">Hoje</button><button class=\"ds-nav-button\">Baralhos</button><button class=\"ds-nav-button\">Histórico</button><button class=\"ds-nav-button\">Backup</button></nav>",
+      "css": ".ds-nav{display:flex;gap:26px;border-bottom:1px solid #bcc5d1}.ds-nav-button{border:0;border-bottom:3px solid transparent;background:none;padding:14px 0;color:var(--muted,#5b6472);font-size:14px;font-weight:700;cursor:pointer;font-family:Lato,Arial,sans-serif;transition:background-color .16s ease-out,color .16s ease-out,border-color .16s ease-out;}.ds-nav-button:hover{color:var(--ink,#19212e)}.ds-nav-button[aria-current=page]{color:var(--accent,#ae185c);border-bottom-color:var(--accent,#ae185c)}.ds-nav-button:focus-visible{outline:3px solid var(--focus,#b23975);outline-offset:3px;}@media(max-width:700px){.ds-nav{gap:20px;justify-content:space-between}.ds-nav-button{font-size:13px}}@media(prefers-reduced-motion:reduce){.ds-nav-button{transition:none}}"
+    },
+    {
+      "name": "Painel de backup",
+      "kind": "card",
+      "refersTo": "panel",
+      "description": "Superfície plana para instruções e controles relacionados.",
+      "html": "<section class=\"ds-panel\"><h2>Neste navegador</h2><p>Opcional. Sem essa opção, os dados ficam na memória desta aba. Faça seu próprio backup antes de fechar.</p></section>",
+      "css": ".ds-panel{background:var(--paper,#fff);border:1px solid var(--line,#d8dde5);border-radius:var(--radius,12px);padding:28px;font-family:Lato,Arial,sans-serif;color:var(--ink,#19212e)}.ds-panel h2{font-size:19px;line-height:1.3;margin:0 0 10px;font-weight:700}.ds-panel p{font-size:13px;line-height:1.8;color:var(--muted,#5b6472);max-width:65ch;margin:0}@media(max-width:700px){.ds-panel{padding:23px}}"
+    },
+    {
+      "name": "Prática dentro da fila",
+      "kind": "custom",
+      "refersTo": "practice-panel",
+      "description": "Pergunta e resposta mantêm o contexto do item aberto.",
+      "html": "<article class=\"ds-study\"><div class=\"ds-study-row\"><span>08/11/2026</span><span>Cálculo mental</span><strong>Quanto é 8 × 7?</strong></div><div class=\"ds-practice\"><h2>Quanto é 8 × 7?</h2><section class=\"ds-answer\"><h3>Resposta</h3><p>56.</p></section><button class=\"ds-study-grade\">Lembrei <small>Volta em 09/11/2026</small></button></div></article>",
+      "css": ".ds-study{background:var(--paper,#fff);border:1px solid #c8d0db;border-radius:var(--radius,12px);font-family:Lato,Arial,sans-serif;color:var(--ink,#19212e)}.ds-study-row{display:flex;gap:20px;align-items:center;border-bottom:1px solid var(--line,#d8dde5);padding:19px 20px;font-size:12px}.ds-study-row strong{font-size:15px}.ds-practice{padding:28px 36px 30px}.ds-practice h2{font-size:23px;line-height:1.5;max-width:60ch;font-weight:700;margin:0 0 24px}.ds-answer{border-top:1px solid var(--line,#d8dde5);padding-top:22px;margin:20px 0 24px}.ds-answer h3{font-size:12px;color:var(--muted,#5b6472);margin:0 0 10px}.ds-answer p{font-size:18px;line-height:1.7;max-width:70ch;margin:0}.ds-study-grade{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:42px;border:1px solid transparent;border-radius:7px;padding:10px 14px;font-size:12px;font-weight:700;line-height:1.3;cursor:pointer;font-family:Lato,Arial,sans-serif;transition:background-color .16s ease-out,color .16s ease-out,border-color .16s ease-out;flex-direction:column;gap:4px;min-width:145px;background:var(--accent,#ae185c);color:var(--paper,#fff)}.ds-study-grade small{font-size:10px;font-weight:400}.ds-study-grade:hover{background:var(--accent-hover,#8c134a)}.ds-study-grade:focus-visible{outline:3px solid var(--focus,#b23975);outline-offset:3px;}@media(max-width:700px){.ds-study-row{flex-wrap:wrap;padding:18px 17px}.ds-study-row strong{width:100%}.ds-practice{padding:22px 17px}.ds-practice h2{font-size:20px;line-height:1.6}.ds-answer p{font-size:17px}.ds-study-grade{flex-direction:row;justify-content:space-between;gap:15px;width:100%}}@media(prefers-reduced-motion:reduce){.ds-study-grade{transition:none}}"
+    }
+  ],
+  "narrative": {
+    "northStar": "Caderno de prática",
+    "overview": "O Caderno de prática dá prioridade à pergunta, à leitura da resposta e à próxima data. A linguagem vem da família LOFRANO TECNOLOGIA: Lato local, neutros frios, cabeçalho escuro e rosa de ação. As áreas de trabalho têm densidade compacta; o item aberto ganha papel branco e espaço de leitura dentro da própria fila.\n\nA hierarquia usa peso, tamanho, alinhamento e divisórias. Texto simples e ícones SVG de traço sustentam os controles; avisos, confirmações e formulários permanecem no fluxo da página. A passagem entre pergunta, resposta e avaliação não acrescenta movimento ornamental.",
+    "keyCharacteristics": [
+      "Neutros frios e papel branco, com rosa nas ações e seleções.",
+      "Uma família tipográfica, com pesos regular e negrito.",
+      "Listas planas e expansão de leitura dentro do item.",
+      "Datas e estados descritos por texto, com foco de teclado visível."
+    ],
+    "rules": [
+      {
+        "name": "The Acento de ação Rule",
+        "body": "Preserve os planos de leitura em neutros; use o rosa para ação, seleção, foco e resposta de edição.",
+        "section": "colors"
+      },
+      {
+        "name": "The Estado por extenso Rule",
+        "body": "Acompanhe cada estado, erro e escolha de avaliação com texto; a cor reforça a informação.",
+        "section": "colors"
+      },
+      {
+        "name": "The Leitura antes da ação Rule",
+        "body": "Dê à pergunta e à resposta abertas mais espaço e tamanho que aos metadados e aos controles ao redor.",
+        "section": "typography"
+      },
+      {
+        "name": "The Planos sem elevação Rule",
+        "body": "Diferencie áreas por fundo, borda e espaço; mantenha superfícies planas, inclusive no hover.",
+        "section": "elevation"
+      }
+    ],
+    "dos": [
+      "**Do** preservar Lato local e os pesos regular e negrito para a hierarquia.",
+      "**Do** manter rótulos visíveis, placeholders legíveis e foco de teclado destacado.",
+      "**Do** apresentar a data completa junto ao texto relativo e usar números tabulares nas datas de conferência.",
+      "**Do** deixar estados, instruções e confirmações junto ao contexto a que pertencem.",
+      "**Do** adaptar grades, grupos de ações e áreas de leitura à largura disponível."
+    ],
+    "donts": [
+      "**Don't** usar o rosa como fundo extenso da pergunta, da resposta ou das listas.",
+      "**Don't** elevar painéis com sombras ou deslocamentos no hover.",
+      "**Don't** comunicar avaliação, erro, seleção ou salvamento somente pela cor.",
+      "**Don't** substituir rótulos por placeholders ou ações nomeadas por ícones isolados.",
+      "**Don't** acrescentar animação ornamental ao revelar a resposta ou trocar de área."
+    ]
+  }
+}

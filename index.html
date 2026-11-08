@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Crie cartões de estudo, pratique e acompanhe uma agenda de revisões no navegador. Código aberto da LOFRANO TECNOLOGIA, com histórico e backup local.">
+  <meta name="theme-color" content="#17202d">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; font-src 'self'; img-src 'self'; connect-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'">
+  <title>Caderno de Revisões · LOFRANO</title>
+  <link rel="icon" href="./assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="./assets/app.css">
+  <script type="module" src="./src/app.mjs"></script>
+</head>
+<body>
+<!-- THESIS: A fila mostra o que está previsto e abre a prática na própria linha. OWN-WORLD: Lato local, superfícies frias, cabeçalho escuro e rosa de ação da família LOFRANO. STORY: Criar conteúdo, ler a pergunta, revelar, autoavaliar e registrar a próxima data. FIRST VIEWPORT: Navegação compacta, data de referência e filtros acima de uma fila legível; cada pergunta tem acesso direto à resposta e à avaliação, com espaço de leitura no item aberto. FORM: Fila com expansão inline, estrutura 6; seed e92dbc6b; interface code-led em identidade herdada. A revelação modifica o estado sem animação ornamental. FINISH: unreviewed and undocumented is unfinished; this build ends with the finish review, the verdict, and DESIGN.md -->
+<svg class="svg-defs" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><defs>
+  <symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></symbol>
+  <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14m-5-5 5 5-5 5"/></symbol>
+  <symbol id="i-book" viewBox="0 0 24 24"><path d="M3 4h7l2 2 2-2h7v16h-7l-2 2-2-2H3zM12 6v16M6 8h3M15 8h3M6 12h3M15 12h3"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><path d="m5 12 4 4L19 6"/></symbol>
+  <symbol id="i-download" viewBox="0 0 24 24"><path d="M12 3v12m-5-5 5 5 5-5M4 16v5h16v-5"/></symbol>
+  <symbol id="i-search" viewBox="0 0 24 24"><circle cx="10" cy="10" r="6"/><path d="m15 15 6 6"/></symbol>
+</defs></svg>
+<a class="skip-link" href="#content">Pular para o conteúdo</a>
+<header class="topbar">
+  <a class="brand" href="./" aria-label="Caderno de Revisões, início"><span class="brand-symbol" aria-hidden="true">L</span><span>Caderno de Revisões<small>por LOFRANO TECNOLOGIA</small></span></a>
+  <a class="source-link" href="https://github.com/martinlofranodeoliveira/caderno-revisoes" target="_blank" rel="noopener noreferrer">Código aberto <svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
+</header>
+<main id="content" tabindex="-1">
+  <div class="workspace-bar">
+    <nav aria-label="Áreas do caderno"><button id="nav-today" class="nav-button" aria-current="page">Hoje</button><button id="nav-library" class="nav-button">Baralhos</button><button id="nav-history" class="nav-button">Histórico</button><button id="nav-backup" class="nav-button">Backup</button></nav>
+    <div class="session-state"><span id="save-status" role="status">Preparando caderno…</span><span id="today-label"></span></div>
+  </div>
+  <div id="notice" class="notice" role="status" hidden><p id="notice-text"></p><div class="notice-actions"><button id="undo" class="text-button" hidden>Desfazer última alteração</button><button id="reload-saved" class="text-button" hidden>Carregar versão salva</button></div></div>
+  <div id="confirm-example" class="confirm-panel" hidden><p id="example-summary"></p><div class="actions"><button id="confirm-example-replace" class="button primary">Substituir pelo exemplo</button><button id="cancel-example" class="button secondary">Manter meus dados</button></div></div>
+  <div id="confirm-reload" class="confirm-panel" hidden><p id="reload-summary"></p><div class="actions"><button id="confirm-reload-replace" class="button primary">Usar versão salva</button><button id="cancel-reload" class="button secondary">Manter esta aba</button></div></div>
+  <div id="fatal" class="notice danger" hidden><p>Não foi possível iniciar o aplicativo. Recarregue a página ou use uma cópia atualizada do projeto.</p></div>
+
+  <section id="view-today" aria-labelledby="today-title">
+    <div class="section-heading"><div><h1 id="today-title">Revisões para hoje</h1><p id="today-count">Crie seu primeiro baralho para começar.</p></div><button id="load-example" class="button secondary">Explorar exemplo demonstrativo</button></div>
+    <div class="filters queue-filters"><label class="field" for="today-deck">Baralho<select id="today-deck"><option value="">Todos os baralhos</option></select></label><label class="field" for="today-search">Buscar na fila<span class="search-input"><svg aria-hidden="true"><use href="#i-search"/></svg><input id="today-search" type="search" placeholder="Pergunta ou nome do baralho"></span></label></div>
+    <div id="queue-head" class="queue-head" aria-hidden="true"><span>Previsto</span><span>Baralho</span><span>Pergunta</span><span>Praticar</span></div>
+    <div id="queue-list" class="queue-list"></div>
+    <div id="queue-empty" class="empty-state"><svg aria-hidden="true"><use href="#i-book"/></svg><h2 id="queue-empty-title">Um caderno para a sua próxima descoberta.</h2><p id="queue-empty-copy">Crie um baralho, escreva seus cartões e volte para praticar. Você avalia a resposta e o aplicativo organiza a próxima data.</p><button id="queue-library" class="button primary">Criar meu primeiro baralho</button></div>
+    <div class="pager" id="queue-pager" hidden><button id="queue-prev" class="button secondary">Página anterior</button><span id="queue-page-info"></span><button id="queue-next" class="button secondary">Próxima página</button></div>
+    <details class="help"><summary>Como as próximas datas são escolhidas?</summary><p>Rever amanhã leva o cartão ao estágio 0, com revisão no dia seguinte. Lembrei avança um estágio; Fácil avança dois. Os estágios de 1 a 6 usam intervalos de 1, 3, 7, 14, 30 e 60 dias, contados a partir da avaliação.</p><p>Cada versão recebe uma avaliação por dia, quando estiver na fila. Você avalia sua própria resposta. Alterar o texto inicia uma nova versão e preserva o histórico anterior.</p></details>
+  </section>
+
+  <section id="view-library" aria-labelledby="library-title" hidden>
+    <div class="section-heading"><div><h1 id="library-title">Seus baralhos e cartões</h1><p>Escreva com suas palavras. Cada cartão guarda suas versões.</p></div><button id="new-deck" class="button primary"><svg aria-hidden="true"><use href="#i-plus"/></svg>Novo baralho</button></div>
+    <div class="library-layout">
+      <aside class="deck-sidebar" aria-label="Baralhos"><div id="deck-list" class="deck-list"></div><p id="decks-empty" class="empty-copy">Nenhum baralho criado.</p></aside>
+      <div class="library-main">
+        <form id="deck-form" class="inline-form" novalidate hidden><h2 id="deck-form-title">Novo baralho</h2><label class="field" for="deck-name">Nome do baralho<input id="deck-name" maxlength="120" required placeholder="Ex.: Cálculo mental"><span id="error-deck-name" class="field-error"></span></label><label class="field" for="deck-description">Descrição<textarea id="deck-description" maxlength="1000" rows="3" placeholder="O que você quer praticar aqui?"></textarea><span id="error-deck-description" class="field-error"></span></label><div class="actions"><button type="submit" class="button primary">Salvar baralho</button><button id="cancel-deck" type="button" class="button secondary">Cancelar edição</button></div></form>
+        <div id="deck-content" hidden>
+          <div class="section-heading small"><div><h2 id="deck-title"></h2><p id="deck-description-display"></p><p id="deck-count" class="section-help"></p></div><div class="actions"><button id="edit-deck" class="text-button">Editar baralho</button><button id="ask-remove-deck" class="text-button danger-text">Remover baralho</button></div></div>
+          <div id="confirm-remove-deck" class="confirm-panel" hidden><p>Remover este baralho vazio? Os demais baralhos serão preservados.</p><div class="actions"><button id="remove-deck" class="button danger-button">Confirmar remoção</button><button id="cancel-remove-deck" class="button secondary">Manter baralho</button></div></div>
+          <div class="card-tools"><button id="new-card" class="button primary"><svg aria-hidden="true"><use href="#i-plus"/></svg>Adicionar cartão</button><button id="export-cards" class="button secondary">Exportar cartões CSV</button><button id="toggle-csv" class="button secondary">Importar CSV</button></div>
+          <section id="csv-panel" class="inline-form" aria-labelledby="csv-title" hidden><h3 id="csv-title">Trazer cartões de um CSV</h3><p class="section-help">Duas colunas: Frente e Verso. Até 500 cartões e 1 MiB. Todas as linhas são validadas antes da confirmação.</p><div class="csv-controls"><label class="field" for="csv-delimiter">Separador<select id="csv-delimiter"><option value=";">Ponto e vírgula (;)</option><option value=",">Vírgula (,)</option></select></label><label class="button secondary file-label" for="csv-file">Escolher CSV<input id="csv-file" type="file" accept=".csv,text/csv"></label></div><div id="csv-confirm" class="import-preview" hidden><p id="csv-summary"></p><div id="csv-preview"></div><div class="actions"><button id="confirm-csv" class="button primary">Adicionar cartões importados</button><button id="cancel-csv" class="button secondary">Cancelar importação</button></div></div></section>
+          <form id="card-form" class="inline-form card-form" novalidate hidden><h3 id="card-form-title">Adicionar cartão</h3><label class="field" for="card-deck">Baralho<select id="card-deck"></select><span id="error-card-deck" class="field-error"></span></label><label class="field" for="card-front">Frente — pergunta<textarea id="card-front" maxlength="8000" rows="3" required placeholder="O que você quer lembrar?"></textarea><span id="error-card-front" class="field-error"></span></label><label class="field" for="card-back">Verso — resposta<textarea id="card-back" maxlength="8000" rows="4" required placeholder="A resposta que você vai conferir."></textarea><span id="error-card-back" class="field-error"></span></label><p class="section-help">Até 4.000 pontos Unicode por lado. Alterar o texto cria nova versão e reinicia sua agenda. Mover de baralho preserva o progresso.</p><div class="actions"><button type="submit" class="button primary">Salvar cartão</button><button id="cancel-card" type="button" class="button secondary">Cancelar cartão</button></div></form>
+          <div class="filters library-filters"><label class="field" for="card-search">Buscar cartões<input id="card-search" type="search" placeholder="Texto da frente ou do verso"></label><label class="checkbox-label" for="show-archived"><input id="show-archived" type="checkbox">Mostrar arquivados</label></div>
+          <div id="card-list" class="card-list"></div><p id="cards-empty" class="empty-copy">Nenhum cartão corresponde à seleção. Adicione um cartão ou ajuste a busca.</p>
+          <div class="pager" id="card-pager" hidden><button id="card-prev" class="button secondary">Página anterior</button><span id="card-page-info"></span><button id="card-next" class="button secondary">Próxima página</button></div>
+          <div id="confirm-remove-card" class="confirm-panel" hidden><p id="remove-card-summary"></p><div class="actions"><button id="remove-card" class="button danger-button">Excluir cartão e histórico</button><button id="cancel-remove-card" class="button secondary">Manter cartão</button></div></div>
+        </div>
+        <div id="library-empty" class="empty-state"><h2>Seu primeiro assunto começa com um nome.</h2><p>Crie um baralho e acrescente as perguntas que você quer revisar.</p><button id="first-deck" class="button primary">Criar baralho</button></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="view-history" aria-labelledby="history-title" hidden>
+    <div class="section-heading"><div><h1 id="history-title">Seu histórico de estudo</h1><p>Registros em ordem de inclusão, do mais recente para o primeiro.</p></div><button id="export-history" class="button secondary">Exportar histórico CSV</button></div>
+    <label class="field history-filter" for="history-deck">Baralho atual<select id="history-deck"><option value="">Todos os baralhos</option></select></label>
+    <div id="history-list" class="history-list"></div><p id="history-empty" class="empty-copy">Nenhuma avaliação registrada nesta seleção. Sua próxima prática pode começar na área Hoje.</p>
+    <div class="pager" id="history-pager" hidden><button id="history-prev" class="button secondary">Página anterior</button><span id="history-page-info"></span><button id="history-next" class="button secondary">Próxima página</button></div>
+    <p class="fineprint">O texto exibido pertence à versão avaliada. O nome do baralho é o atual, inclusive quando o cartão foi movido depois.</p>
+  </section>
+
+  <section id="view-backup" aria-labelledby="backup-title" hidden>
+    <div class="section-heading"><div><h1 id="backup-title">Guarde uma cópia do seu caderno.</h1><p>Backup completo com baralhos, versões e histórico.</p></div></div>
+    <div class="backup-layout"><section class="backup-panel"><h2>Levar e restaurar</h2><p>JSON preserva o caderno inteiro. Os arquivos CSV são formas de consultar ou trocar conteúdo; não substituem o backup completo.</p><div class="backup-actions"><button id="export-backup" class="button primary"><svg aria-hidden="true"><use href="#i-download"/></svg>Baixar backup completo</button><label class="button secondary file-label" for="import-file">Restaurar backup JSON<input id="import-file" type="file" accept=".json,application/json"></label></div><p class="section-help">Até 8 MiB de JSON. O caderno e o replay do histórico são validados antes da confirmação.</p><div id="import-confirm" class="confirm-panel" hidden><p id="import-summary"></p><div class="actions"><button id="confirm-import" class="button primary">Substituir caderno</button><button id="cancel-import" class="button secondary">Cancelar restauração</button></div></div></section><section class="backup-panel"><h2>Neste navegador</h2><label class="checkbox-label" for="remember"><input id="remember" type="checkbox">Salvar caderno neste navegador</label><p>Opcional. Sem essa opção, os dados ficam na memória desta aba. Faça seu próprio backup antes de fechar ou trocar de computador.</p><p id="storage-detail" class="section-help"></p><button id="retry-save" class="button secondary" hidden>Tentar salvar esta versão</button><p class="fineprint">Os dados locais não são criptografados. Pessoas com acesso ao perfil de navegador e aplicativos da mesma origem podem acessar os registros.</p></section></div>
+    <section class="data-controls"><label class="field" for="notebook-title">Nome do caderno<input id="notebook-title" maxlength="120"></label><button id="rename-notebook" class="button secondary">Salvar nome</button><button id="ask-empty" class="text-button danger-text">Esvaziar esta versão</button><div id="confirm-empty" class="confirm-panel" hidden><p>Remover baralhos, cartões e histórico desta versão? Baixe um backup antes de continuar.</p><div class="actions"><button id="empty-notebook" class="button danger-button">Confirmar caderno vazio</button><button id="cancel-empty" class="button secondary">Manter caderno</button></div></div></section>
+  </section>
+</main>
+<footer class="app-footer"><span>Conteúdo seu. Prática no seu ritmo.</span><a href="https://lofranotecnologia.com.br" target="_blank" rel="noopener noreferrer">LOFRANO TECNOLOGIA <svg aria-hidden="true"><use href="#i-arrow"/></svg></a></footer>
+<p id="live" class="visually-hidden" role="status" aria-live="polite"></p>
+<noscript><p class="notice">Ative JavaScript para criar cartões e registrar revisões. O código e a documentação estão disponíveis no repositório.</p></noscript>
+</body>
+</html>

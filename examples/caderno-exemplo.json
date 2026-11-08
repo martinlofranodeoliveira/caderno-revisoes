@@ -1,0 +1,128 @@
+{
+  "schemaVersion": 1,
+  "id": "caderno-exemplo",
+  "title": "Caderno de exemplo",
+  "decks": [
+    {
+      "id": "baralho-somas",
+      "name": "Somas e diferenças",
+      "description": "Cartões demonstrativos com contas simples."
+    },
+    {
+      "id": "baralho-produtos",
+      "name": "Produtos e divisões",
+      "description": "Conteúdo demonstrativo para experimentar a fila."
+    }
+  ],
+  "cards": [
+    {
+      "id": "cartao-soma-1",
+      "deckId": "baralho-somas",
+      "archived": false,
+      "versions": [
+        {
+          "front": "2 + 3?",
+          "back": "5",
+          "changedOn": "2026-11-05"
+        }
+      ]
+    },
+    {
+      "id": "cartao-soma-2",
+      "deckId": "baralho-somas",
+      "archived": false,
+      "versions": [
+        {
+          "front": "10 − 4?",
+          "back": "6",
+          "changedOn": "2026-11-06"
+        }
+      ]
+    },
+    {
+      "id": "cartao-soma-3",
+      "deckId": "baralho-somas",
+      "archived": false,
+      "versions": [
+        {
+          "front": "7 + 8?",
+          "back": "15",
+          "changedOn": "2026-11-08"
+        }
+      ]
+    },
+    {
+      "id": "cartao-produto-1",
+      "deckId": "baralho-produtos",
+      "archived": false,
+      "versions": [
+        {
+          "front": "3 × 4?",
+          "back": "12",
+          "changedOn": "2026-11-05"
+        }
+      ]
+    },
+    {
+      "id": "cartao-produto-2",
+      "deckId": "baralho-produtos",
+      "archived": false,
+      "versions": [
+        {
+          "front": "18 ÷ 3?",
+          "back": "6",
+          "changedOn": "2026-11-07"
+        }
+      ]
+    },
+    {
+      "id": "cartao-produto-3",
+      "deckId": "baralho-produtos",
+      "archived": true,
+      "versions": [
+        {
+          "front": "5 × 5?",
+          "back": "25",
+          "changedOn": "2026-11-06"
+        }
+      ]
+    }
+  ],
+  "reviews": [
+    {
+      "id": "revisao-exemplo-1",
+      "cardId": "cartao-soma-1",
+      "version": 1,
+      "studiedOn": "2026-11-05",
+      "grade": "good"
+    },
+    {
+      "id": "revisao-exemplo-2",
+      "cardId": "cartao-produto-1",
+      "version": 1,
+      "studiedOn": "2026-11-05",
+      "grade": "easy"
+    },
+    {
+      "id": "revisao-exemplo-3",
+      "cardId": "cartao-soma-2",
+      "version": 1,
+      "studiedOn": "2026-11-06",
+      "grade": "again"
+    },
+    {
+      "id": "revisao-exemplo-4",
+      "cardId": "cartao-soma-1",
+      "version": 1,
+      "studiedOn": "2026-11-06",
+      "grade": "good"
+    },
+    {
+      "id": "revisao-exemplo-5",
+      "cardId": "cartao-produto-2",
+      "version": 1,
+      "studiedOn": "2026-11-08",
+      "grade": "good"
+    }
+  ]
+}
